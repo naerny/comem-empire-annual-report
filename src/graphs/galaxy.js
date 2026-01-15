@@ -124,7 +124,7 @@ async function loadDataAndManipulate() {
 
         // Append an image to the SVG
         svg.append('image')
-            .attr('xlink:href', new URL('/src/img/galaxy.jpg', import.meta.url))
+            .attr('xlink:href', new URL(`${window.location.origin}/img/galaxy.jpg`, import.meta.url))
             .attr('height', '100%')
             .attr('min-height', '100%')
             .attr('preserveAspectRatio', 'none');
@@ -150,8 +150,7 @@ async function loadDataAndManipulate() {
                             .attr('height', 20)
                             .style('fill', d => d.properties.alignment ? 'blue' : 'red')
                             .append('use')                            
-                            .attr('href', d => d.properties.alignment ? new URL('./src/img/sprite.svg#logo-empire', import.meta.url) : new URL('./src/img/sprite.svg#logo-rebel', import.meta.url));
-                            // .attr('href', d => d.properties.alignment ? './src/img/sprite.svg#logo-empire' : './src/img/sprite.svg#logo-rebel');
+                            .attr('href', d => d.properties.alignment ? new URL(`${window.location.origin}/img/sprite.svg#logo-empire`, import.meta.url) : new URL(`${window.location.origin}/img/sprite.svg#logo-rebel`, import.meta.url));
                         group.append('text')
                             .text(d => d.properties.name)
                             .attr('x', d => xScale(d.properties.long))
@@ -177,8 +176,7 @@ async function loadDataAndManipulate() {
                                     .style('filter', 'drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.25))')
                                     .attr('Alignment', d => d.properties.alignment)
                                     .style('fill', d => d.properties.alignment ? 'blue' : 'red')
-                                    .select('use').attr('href', d => d.properties.alignment ? './src/img/sprite.svg#logo-empire' : './src/img/sprite.svg#logo-rebel')
-                                    .select('use').attr('href', d => d.properties.alignment ? './src/img/sprite.svg#logo-empire' : './src/img/sprite.svg#logo-rebel'),
+                                    .select('use').attr('href', d => d.properties.alignment ? `${window.location.origin}/img/sprite.svg#logo-empire` : `${window.location.origin}/img/sprite.svg#logo-rebel`),
                                     d3.select(this)
                                         .transition()
                                         .delay(750)
@@ -257,7 +255,7 @@ async function loadDataAndManipulate() {
             d3.select('.planet-population p').text(properties.population);
             d3.select('.planet-rotation p').text(properties.rotation_period + ' periods');
             
-            const imageUrl = new URL(`./src/img/planets/${properties.name.toLowerCase().replace(/ /g, '_')}.svg`, import.meta.url);
+            const imageUrl = new URL(`${window.location.origin}/img/planets/${properties.name.toLowerCase().replace(/ /g, '_')}.svg`, import.meta.url);
             d3.select('.planet-img img').attr('src', imageUrl);
 
 

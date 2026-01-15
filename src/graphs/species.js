@@ -38,7 +38,7 @@ async function loadDataAndManipulate() {
                                 .append('div')
                                 .attr('class', 'species-img')
                                 .append('img')
-                                .attr('src', `./src/img/species/${d.properties.name}.svg`)
+                                .attr('src', `${window.location.origin}/img/species/${d.properties.name.toLowerCase()}.svg`)
 
                             d3.select(this)
                                 .append('h3')

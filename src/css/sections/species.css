@@ -16,6 +16,10 @@
     @media(min-width: 992px) {
         padding: 0 var(--space-lg);
     }
+
+    h3 {
+        text-align: center;
+    }
 }
 
 .species-item:hover {

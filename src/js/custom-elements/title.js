@@ -7,7 +7,7 @@ class TitleContainer extends HTMLElement {
       <div class="btn-backContainer">
       <button class="btn-back icon">
           <svg class="">
-              <use href="./src/img/sprite.svg#chevron"></use>
+              <use href="${window.location.origin}/img/sprite.svg#chevron"></use>
           </svg>
       </button>
   </div>` : ''}      
