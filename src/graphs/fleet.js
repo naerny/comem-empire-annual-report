@@ -73,7 +73,7 @@ function updateFleetItems(data) {
         )
         .html(d => `
             <svg class="">
-                <use href="./src/img/sprite.svg#${d.icon}"></use>
+                <use href="${window.location.origin}/img/sprite.svg#${d.icon}"></use>
 
             </svg>
         `); 
@@ -95,7 +95,7 @@ function updateFleetItems(data) {
         .attr('class', 'icon icon-fleet')
         .html(d => `
             <svg class="">
-                <use href="./src/img/sprite.svg#${d.icon}"></use>
+                <use href="${window.location.origin}/img/sprite.svg#${d.icon}"></use>
 
             </svg>
         `);    
