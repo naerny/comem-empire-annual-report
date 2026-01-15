@@ -47,6 +47,11 @@
     grid-template-columns: min-content min-content;
     gap: var(--space-md);
     height: min-content;
+    z-index: 2;
+
+    h3, p {
+        text-shadow: 1px 1px 5px black;
+    }
 }
 
 .planet-data div {
